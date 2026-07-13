@@ -1,37 +1,51 @@
+Markdown
 # react-native-liquid-glass-bottom-tabs
 
-iOS Native Liquid Glass Bottom TabViewTabViewView Component
+A high-performance, native SwiftUI-based tab bar component for React Native. Featuring the "Liquid Glass" floating effect, native iOS 18+ TabView integration, and full support for custom SF Symbols.
+
+## Features
+
+- **Native SwiftUI:** Built with a native `UIHostingController` for butter-smooth animations.
+- **Floating Design:** Designed for the modern Global Overlay Pattern.
+- **Customizable:** Supports both Apple's system symbols and your own custom SF Symbols.
+- **TypeScript Ready:** Full type definitions included.
 
 ## Installation
 
-
 ```sh
 npm install react-native-liquid-glass-bottom-tabs
-```
-
-
-## Usage
-
-
-```js
-import { multiply } from 'react-native-liquid-glass-bottom-tabs';
+Usage
+TypeScript
+import { LiquidTabBar } from 'react-native-liquid-glass-bottom-tabs';
 
 // ...
 
-const result = multiply(3, 7);
-```
+const myTabs = [
+  { title: 'Home', sfSymbol: 'house.fill' },
+  { title: 'Profile', customIcon: 'my_custom_asset' }
+];
 
+// Inside your main App component
+<LiquidTabBar
+  tabs={myTabs}
+  activeIndex={activeIndex}
+  onTabPress={(e) => setActiveIndex(e.nativeEvent.index)}
+/>
+Requirements
+iOS 18.0+
 
-## Contributing
+React Native 0.70+
 
-- [Development workflow](CONTRIBUTING.md#development-workflow)
-- [Sending a pull request](CONTRIBUTING.md#sending-a-pull-request)
-- [Code of conduct](CODE_OF_CONDUCT.md)
+Xcode 16+ (for iOS 18 SDK support)
 
-## License
+Contributing
+Development workflow
 
+Sending a pull request
+
+Code of conduct
+
+License
 MIT
 
----
-
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+Made with create-react-native-library
