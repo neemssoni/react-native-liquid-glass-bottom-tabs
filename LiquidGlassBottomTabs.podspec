@@ -10,11 +10,15 @@ Pod::Spec.new do |s|
   s.license      = package["license"]
   s.authors      = package["author"]
 
-  s.platforms    = { :ios => min_ios_version_supported }
+  s.platforms    = { :ios => "14.0" }
   s.source       = { :git => "https://github.com/neemssoni/react-native-liquid-glass-bottom-tabs.git", :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,m,mm}", "cpp/**/*.{hpp,cpp,c,h}", "ios/generated/*.{h,cpp,mm}"
+  # 1. ADDED 'swift' to the ios/ source files array!
+  s.source_files = "ios/**/*.{h,m,mm,swift}", "ios/generated/*.{h,cpp,mm}"
   s.private_header_files = "ios/**/*.h"
+  
+  # 2. ADDED Swift version specification
+  s.swift_version = "5.0"
 
   install_modules_dependencies(s)
 end

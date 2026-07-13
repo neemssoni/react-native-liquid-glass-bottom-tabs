@@ -12,7 +12,7 @@
     ],
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react-jsx",
+    "jsx": "react-native",
     "lib": ["ESNext"],
     "module": "ESNext",
     "moduleResolution": "bundler",
