@@ -12,20 +12,14 @@
     },
     "./package.json": "./package.json"
   },
-  "files": [
+ "files": [
     "src",
     "lib",
-    "android",
     "ios",
-    "cpp",
     "*.podspec",
     "react-native.config.js",
     "!ios/build",
-    "!android/build",
-    "!android/gradle",
-    "!android/gradlew",
-    "!android/gradlew.bat",
-    "!android/local.properties",
+    "!example",
     "!**/__tests__",
     "!**/__fixtures__",
     "!**/__mocks__",
@@ -58,7 +52,8 @@
   },
   "homepage": "https://github.com/neemssoni/react-native-liquid-glass-bottom-tabs#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^21.0.2",
