@@ -8,6 +8,11 @@ class LiquidTabBarManager: RCTViewManager {
     return LiquidTabBarViewWrapper()
   }
   
+  @objc var activeTintColor: UIColor {
+          set { /* Not strictly needed if using @objc in the View directly */ }
+          get { return .blue }
+      }
+  
   override static func requiresMainQueueSetup() -> Bool {
     return true
   }

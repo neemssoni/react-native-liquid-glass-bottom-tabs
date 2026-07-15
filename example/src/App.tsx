@@ -1,5 +1,12 @@
 import * as React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  DynamicColorIOS,
+  useColorScheme,
+} from 'react-native';
 import {
   NavigationContainer,
   createNavigationContainerRef,
@@ -69,6 +76,18 @@ export default function App() {
     { title: 'Profile', sfSymbol: 'person.fill' },
   ];
 
+  // Define dynamic colors that adapt to the system theme
+  const activeTintColor = DynamicColorIOS({
+    light: '#1C3FCA', // Blue for light mode
+    dark: '#1C3FCA', // Lighter blue for dark mode
+  });
+
+  const inactiveTintColor = DynamicColorIOS({
+    light: '#4B5563',
+    dark: '#4B5563',
+  });
+
+  const colorScheme = useColorScheme(); // 'light' or 'dark'
   return (
     <View style={styles.container}>
       {/* 3. Standard Navigation Container */}
@@ -94,7 +113,12 @@ export default function App() {
           tabs={myTabs}
           activeIndex={activeRouteIndex}
           onTabPress={handleTabPress}
-          style={StyleSheet.absoluteFill}
+          activeTintColor={activeTintColor}
+          inactiveTintColor={inactiveTintColor}
+          theme={colorScheme}
+          // CHANGE THIS: Remove StyleSheet.absoluteFill
+          // Use a fixed height and position it at the bottom
+          style={styles.liquidTabBar}
         />
       </View>
     </View>
@@ -126,5 +150,12 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     fontWeight: '600',
+  },
+  liquidTabBar: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 90, // Adjust this value to match your design height
   },
 });

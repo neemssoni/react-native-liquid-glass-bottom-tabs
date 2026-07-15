@@ -1,5 +1,10 @@
 import { requireNativeComponent } from 'react-native';
-import type { ViewProps, NativeSyntheticEvent } from 'react-native';
+import type {
+  ViewProps,
+  NativeSyntheticEvent,
+  ColorValue,
+  ColorSchemeName,
+} from 'react-native';
 
 export interface TabItem {
   title: string;
@@ -11,6 +16,10 @@ interface LiquidTabBarProps extends ViewProps {
   tabs: TabItem[];
   activeIndex: number;
   onTabPress?: (event: NativeSyntheticEvent<{ index: number }>) => void;
+  // Use ColorValue to support DynamicColorIOS
+  activeTintColor: ColorValue;
+  inactiveTintColor: ColorValue;
+  theme: ColorSchemeName | null | undefined;
 }
 
 // Interacts with the registered native module string name
