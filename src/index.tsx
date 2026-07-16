@@ -24,7 +24,7 @@ interface LiquidTabBarProps extends ViewProps {
 
 // Interacts with the registered native module string name
 const NativeLiquidTabBar =
-  requireNativeComponent<LiquidTabBarProps>('LiquidTabBar');
+  requireNativeComponent<LiquidTabBarProps>('LiquidTabBarView');
 
 export default function LiquidTabBar(props: LiquidTabBarProps) {
   return <NativeLiquidTabBar {...props} />;

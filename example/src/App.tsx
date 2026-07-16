@@ -156,6 +156,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    height: 90, // Adjust this value to match your design height
+
+    height: 64, // Adjust this value to match your design height
   },
 });
